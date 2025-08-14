@@ -1,3 +1,4 @@
+Exercicio 1 - Livro
 class Livro:
     def __init__(self, titulo, autor, numero_paginas):
         self.titulo = titulo
@@ -28,3 +29,40 @@ livro1 = Livro("É assim que acaba", "Colleen Hoover", 368)
 livro1.abrir_livro()
 livro1.ler_paginas(30)
 livro1.exibir_progresso()
+
+
+Exercicio 2 - Conta Bancaria
+class ContaBancaria:
+    def __init__(self, titular, numero_conta):
+        self.titular = titular
+        self.numero_conta = numero_conta
+        self.saldo = 0
+
+    def depositar(self, valor):
+        if valor > 0:
+            self.saldo += valor
+            print(f"Depósito de R${valor} feito com sucesso.")
+        else:
+            print("Valor inválido para depósito.")
+
+    def sacar(self, valor):
+        if valor <= self.saldo:
+            self.saldo -= valor
+            print(f"Saque de R${valor} realizado.")
+        else:
+            print("Saldo insuficiente.")
+
+    def consultar_saldo(self):
+        print(f"Saldo atual: R${self.saldo}")
+
+    def exibir_extrato(self):
+        print(f"Titular: {self.titular}")
+        print(f"Número da Conta: {self.numero_conta}")
+        print(f"Saldo: R${self.saldo}")
+
+# Testando a classe
+conta1 = ContaBancaria("Majulle", "9888345697")
+conta1.depositar(2000)
+conta1.sacar(300)
+conta1.consultar_saldo()
+conta1.exibir_extrato()
